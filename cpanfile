@@ -2,7 +2,6 @@ requires 'perl', '5.010001';
 requires 'Amon2'                           => '2.50';
 requires 'Amon2::Plugin::ShareDir';
 requires 'Text::Xslate'                    => '1.1005';
-requires 'Text::Xslate::Bridge::TT2Like'   => '0.00008';
 requires 'Plack::Middleware::ReverseProxy' => '0.09';
 requires 'Time::Piece'                     => '1.20';
 requires 'DBI' => 0;
@@ -37,6 +36,7 @@ requires 'parent';
 requires 'Getopt::Long';
 requires 'Plack::Loader';
 requires 'Pod::Usage';
+requires 'Starlet';
 
 on 'develop' => sub {
     requires 'Locale::Maketext::Extract::Plugin::Xslate', 'v0.0.2';

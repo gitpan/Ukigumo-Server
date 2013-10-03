@@ -33,7 +33,7 @@ no_index:
 provides:
   Ukigumo::Server:
     file: lib/Ukigumo/Server.pm
-    version: 0.01
+    version: v1.0.0
   Ukigumo::Server::API:
     file: lib/Ukigumo/Server/API.pm
   Ukigumo::Server::API::Dispatcher:
@@ -88,10 +88,10 @@ requires:
   Plack::Session::Store::File: 0
   Pod::Usage: 0
   Router::Simple: 0
+  Starlet: 0
   Teng: 0
   Text::Markdown: 1
   Text::Xslate: 1.1005
-  Text::Xslate::Bridge::TT2Like: 0.00008
   Text::Xslate::Util: 0
   Time::Duration: 0
   Time::Duration::ja: 0
@@ -106,7 +106,7 @@ resources:
   bugtracker: https://github.com/ukigumo/Ukigumo-Server/issues
   homepage: https://github.com/ukigumo/Ukigumo-Server
   repository: git://github.com/ukigumo/Ukigumo-Server.git
-version: 0.01
+version: v1.0.0
 x_contributors:
   - 'xaicron <xaicron@gmail.com>'
   - 'cho45 <cho45@lowreal.net>'
