@@ -4,7 +4,7 @@
       "tokuhirom <tokuhirom@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.7.5",
+   "generated_by" : "Minilla/v0.8.1",
    "license" : [
       "perl_5"
    ],
@@ -72,6 +72,7 @@
             "Plack::Session::Store::File" : "0",
             "Pod::Usage" : "0",
             "Router::Simple" : "0",
+            "Router::Simple::Sinatraish" : "0",
             "Starlet" : "0",
             "Teng" : "0",
             "Text::Markdown" : "1",
@@ -107,7 +108,7 @@
    "provides" : {
       "Ukigumo::Server" : {
          "file" : "lib/Ukigumo/Server.pm",
-         "version" : "v1.0.1"
+         "version" : "v1.0.2"
       },
       "Ukigumo::Server::API" : {
          "file" : "lib/Ukigumo/Server/API.pm"
@@ -163,7 +164,7 @@
          "web" : "https://github.com/ukigumo/Ukigumo-Server"
       }
    },
-   "version" : "v1.0.1",
+   "version" : "v1.0.2",
    "x_contributors" : [
       "xaicron <xaicron@gmail.com>",
       "cho45 <cho45@lowreal.net>",

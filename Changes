@@ -1,5 +1,10 @@
 Revision history for Perl extension Ukigumo-Server
 
+v1.0.2 2013-11-02T09:27:19Z
+
+    - Fixed deps, again.
+      (tokuhirom)
+
 v1.0.1 2013-11-02T00:25:05Z
 
     - fixed cpanfile

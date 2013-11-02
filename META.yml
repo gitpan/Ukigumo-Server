@@ -16,7 +16,7 @@ configure_requires:
   CPAN::Meta::Prereqs: 0
   Module::Build: 0.38
 dynamic_config: 0
-generated_by: 'Minilla/v0.7.5, CPAN::Meta::Converter version 2.132510'
+generated_by: 'Minilla/v0.8.1, CPAN::Meta::Converter version 2.132510'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -35,7 +35,7 @@ no_index:
 provides:
   Ukigumo::Server:
     file: lib/Ukigumo/Server.pm
-    version: v1.0.1
+    version: v1.0.2
   Ukigumo::Server::API:
     file: lib/Ukigumo/Server/API.pm
   Ukigumo::Server::API::Dispatcher:
@@ -90,6 +90,7 @@ requires:
   Plack::Session::Store::File: 0
   Pod::Usage: 0
   Router::Simple: 0
+  Router::Simple::Sinatraish: 0
   Starlet: 0
   Teng: 0
   Text::Markdown: 1
@@ -108,7 +109,7 @@ resources:
   bugtracker: https://github.com/ukigumo/Ukigumo-Server/issues
   homepage: https://github.com/ukigumo/Ukigumo-Server
   repository: git://github.com/ukigumo/Ukigumo-Server.git
-version: v1.0.1
+version: v1.0.2
 x_contributors:
   - 'xaicron <xaicron@gmail.com>'
   - 'cho45 <cho45@lowreal.net>'
