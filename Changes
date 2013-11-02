@@ -1,5 +1,10 @@
 Revision history for Perl extension Ukigumo-Server
 
+v1.0.1 2013-11-02T00:25:05Z
+
+    - fixed cpanfile
+      (songmu)
+
 v1.0.0 2013-10-03T16:58:42Z
 
     - Switch to Kolon syntax
