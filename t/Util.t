@@ -5,13 +5,17 @@ use Test::More;
 
 use Ukigumo::Server::Util;
 
-is(Ukigumo::Server::Util::make_line_link(<<'...'), <<',,,');
+my $code = <<'END_OF_THE_WORLD';
 XXX
 YYY>
-...
-<a href="#L1" id="L1" class="line-anchor">_</a>&nbsp;<span>XXX</span>
-<a href="#L2" id="L2" class="line-anchor">_</a>&nbsp;<span>YYY&gt;</span>
-,,,
+END_OF_THE_WORLD
+
+my $re = <<'END_OF_RE';
+<a href="#L1" id="L1" class="line-anchor">_</a>&nbsp;<span><span class="">XXX</span></span>
+<a href="#L2" id="L2" class="line-anchor">_</a>&nbsp;<span><span class="">YYY&gt;</span></span>
+END_OF_RE
+
+like(Ukigumo::Server::Util::make_line_link($code), qr{$re});
 
 done_testing;
 

@@ -16,7 +16,7 @@ configure_requires:
   CPAN::Meta::Prereqs: 0
   Module::Build: 0.38
 dynamic_config: 0
-generated_by: 'Minilla/v0.8.1, CPAN::Meta::Converter version 2.132510'
+generated_by: 'Minilla/v0.11.0, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -35,35 +35,49 @@ no_index:
 provides:
   Ukigumo::Server:
     file: lib/Ukigumo/Server.pm
-    version: v1.0.2
+    version: v1.1.0
   Ukigumo::Server::API:
     file: lib/Ukigumo/Server/API.pm
+    version: 0
   Ukigumo::Server::API::Dispatcher:
     file: lib/Ukigumo/Server/API/Dispatcher.pm
+    version: 0
   Ukigumo::Server::Command::Branch:
     file: lib/Ukigumo/Server/Command/Branch.pm
+    version: 0
   Ukigumo::Server::Command::Docs:
     file: lib/Ukigumo/Server/Command/Docs.pm
+    version: 0
   Ukigumo::Server::Command::Report:
     file: lib/Ukigumo/Server/Command/Report.pm
+    version: 0
   Ukigumo::Server::DB:
     file: lib/Ukigumo/Server/DB.pm
+    version: 0
   Ukigumo::Server::DB::Schema:
     file: lib/Ukigumo/Server/DB/Schema.pm
+    version: 0
   Ukigumo::Server::L10N:
     file: lib/Ukigumo/Server/L10N.pm
+    version: 0
   Ukigumo::Server::Launcher:
     file: lib/Ukigumo/Server/Launcher.pm
+    version: 0
   Ukigumo::Server::Schema:
     file: lib/Ukigumo/Server/Schema.pm
+    version: 0
   Ukigumo::Server::Util:
     file: lib/Ukigumo/Server/Util.pm
+    version: 0
   Ukigumo::Server::Web:
     file: lib/Ukigumo/Server/Web.pm
+    version: 0
   Ukigumo::Server::Web::Dispatcher:
     file: lib/Ukigumo/Server/Web/Dispatcher.pm
+    version: 0
   Ukigumo::Server::Web::ViewFunctions:
     file: lib/Ukigumo/Server/Web/ViewFunctions.pm
+    version: 0
 requires:
   Amon2: 2.50
   Amon2::Declare: 0
@@ -78,6 +92,7 @@ requires:
   File::Find::Rule: 0
   File::ShareDir: 0
   Getopt::Long: 0
+  HTML::FromANSI::Tiny: 0
   JSON: 2
   LWP::UserAgent: 0
   Locale::Maketext::Extract: 0
@@ -97,7 +112,7 @@ requires:
   Text::Xslate: 1.1005
   Text::Xslate::Util: 0
   Time::Duration: 0
-  Time::Duration::ja: 0
+  Time::Duration::ja: 0.03
   Time::Piece: 1.20
   URI::Escape: 0
   URI::WithBase: 0
@@ -109,10 +124,9 @@ resources:
   bugtracker: https://github.com/ukigumo/Ukigumo-Server/issues
   homepage: https://github.com/ukigumo/Ukigumo-Server
   repository: git://github.com/ukigumo/Ukigumo-Server.git
-version: v1.0.2
+version: v1.1.0
 x_contributors:
   - 'xaicron <xaicron@gmail.com>'
-  - 'cho45 <cho45@lowreal.net>'
   - 'Kan Fushihara <kan@fout.jp>'
   - 'mattn <mattn.jp@gmail.com>'
   - 'Kan Fushihara <kan.fushihara@gmail.com>'
@@ -120,4 +134,6 @@ x_contributors:
   - 'studio3104 <studio3104.com@gmail.com>'
   - 'moznion <moznion@gmail.com>'
   - 'HIROSE Masaaki <hirose31@gmail.com>'
+  - 'Takumi Sakamoto <takumi.saka@gmail.com>'
   - 'Songmu <y.songmu@gmail.com>'
+  - 'cho45 <cho45@lowreal.net>'

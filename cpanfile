@@ -13,7 +13,7 @@ requires 'Teng';
 requires 'Text::Markdown' => 1;
 requires 'Data::Page::NoTotalEntries'     => 0.02;
 requires 'Locale::Maketext::Lexicon' => 0;
-requires 'Time::Duration::ja' => 0;
+requires 'Time::Duration::ja' => '0.03';
 requires 'Time::Duration' => 0;
 requires 'JSON' => 2;
 requires 'Module::Functions';
@@ -38,6 +38,7 @@ requires 'Getopt::Long';
 requires 'Plack::Loader';
 requires 'Pod::Usage';
 requires 'Starlet';
+requires 'HTML::FromANSI::Tiny';
 
 on 'develop' => sub {
     requires 'Locale::Maketext::Extract::Plugin::Xslate', 'v0.0.2';
