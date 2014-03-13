@@ -8,7 +8,7 @@ requires 'DBI' => 0;
 requires 'DBD::SQLite' => 1.33;
 requires 'Data::Validator' => 0.08;
 requires 'Plack::Middleware::Session' => 0.14;
-requires 'Ukigumo::Common' => '0.03';
+requires 'Ukigumo::Common' => '0.04';
 requires 'Teng';
 requires 'Text::Markdown' => 1;
 requires 'Data::Page::NoTotalEntries'     => 0.02;
@@ -27,7 +27,7 @@ requires 'LWP::UserAgent';
 requires 'Locale::Maketext::Extract';
 requires 'Plack::Builder';
 requires 'Plack::Session::Store::File';
-requires 'Router::Simple';
+requires 'Router::Simple', '0.14';
 requires 'Router::Simple::Sinatraish';
 requires 'Text::Xslate::Util';
 requires 'URI::Escape';
@@ -39,6 +39,8 @@ requires 'Plack::Loader';
 requires 'Pod::Usage';
 requires 'Starlet';
 requires 'HTML::FromANSI::Tiny';
+requires 'FindBin::libs';
+requires 'Compress::Zlib';
 
 on 'develop' => sub {
     requires 'Locale::Maketext::Extract::Plugin::Xslate', 'v0.0.2';

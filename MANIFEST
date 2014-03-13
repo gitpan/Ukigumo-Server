@@ -92,9 +92,11 @@ t/00_compile.t
 t/01_root.t
 t/02_mech.t
 t/03-branch.t
+t/03-compression.t
 t/05-api-post.t
 t/06-api-search.t
 t/07-mysqld.t
+t/Command/Report.t
 t/Util.pm
 t/Util.t
 t/api-post.t

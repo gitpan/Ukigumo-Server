@@ -9,6 +9,8 @@ use URI::WithBase;
 use Data::Page::NoTotalEntries;
 use Data::Validator;
 use Ukigumo::Server::Command::Branch;
+use Compress::Zlib;
+use Encode;
 
 sub get_last_status {
     my $class = shift;
@@ -169,6 +171,7 @@ sub insert {
         revision => { isa => 'Str', optional => 1 },
         body     => { isa => 'Str', optional => 1 },
         vc_log   => { isa => 'Str', optional => 1 },
+        compare_url => { isa => 'Str', optional => 1 },
     );
     my $args = $rule->validate(@_);
 
@@ -183,11 +186,11 @@ sub insert {
         delete $params{project};
         delete $params{branch};
 
-        c->db->fast_insert(report => {
+        c->db->fast_insert(report => $class->_compress_text_data({
             %params,
             ctime     => time(),
             branch_id => $branch_id,
-        });
+        }));
     };
 
     c->db->update(branch => {
@@ -195,6 +198,28 @@ sub insert {
     }, {
         branch_id => $branch_id,
     });
+
+    if (defined c->config->{max_report_size_by_branch}) {
+        my $last = [ c->db->search_named(q{ SELECT report_id FROM report WHERE branch_id = :branch_id ORDER BY report_id DESC LIMIT :limit }, {
+            limit     => c->config->{max_report_size_by_branch},
+            branch_id => $branch_id,
+        }) ]->[-1];
+
+        c->db->delete('report', {
+            report_id => { '<' => $last->report_id },
+            branch_id => $branch_id,
+        });
+    }
+
+    if (defined c->config->{max_report_size}) {
+        my $last = [ c->db->search_named(q{ SELECT report_id FROM report ORDER BY report_id DESC LIMIT :limit }, {
+            limit     => c->config->{max_report_size},
+        }) ]->[-1];
+
+        c->db->delete('report', {
+            report_id => { '<' => $last->report_id },
+        });
+    }
 
     $txn->commit;
 
@@ -216,10 +241,44 @@ sub find {
     my $args = $rule->validate(@_);
 
     local c->db->{suppress_row_objects} = 1;
-    return c->db->single_by_sql(
+    return $class->_uncompress_text_data(c->db->single_by_sql(
         q{SELECT branch.project, branch.branch, report.* FROM report INNER JOIN branch ON (report.branch_id=branch.branch_id) WHERE report_id=?},
         [$args->{report_id}]
-    );
+    ));
+}
+
+sub _compress_text_data {
+    my ($self, $row) = @_;
+    c->config->{enable_compression} or return $row;
+    $row->{$_} = __compress(encode_utf8($row->{$_})) for qw(vc_log body);
+    $row;
+}
+
+sub _uncompress_text_data {
+    my ($self, $row) = @_;
+    c->config->{enable_compression} or return $row;
+    $row->{$_} = decode_utf8(__uncompress($row->{$_})) for qw(vc_log body);
+    $row;
+}
+
+sub __compress {
+    my $bytes = Compress::Zlib::memGzip(\ $_[0]) ;
+    if (length($bytes) < length($_[0])) {
+        return $bytes;
+    }
+    $_[0];
+}
+
+
+sub __uncompress {
+    # Only uncompress with gzip header
+    if (
+        substr($_[0], 0, length(IO::Compress::Gzip::Constants::GZIP_MINIMUM_HEADER)) eq 
+        IO::Compress::Gzip::Constants::GZIP_MINIMUM_HEADER
+    ) {
+        return Compress::Zlib::memGunzip(\$_[0]) ;
+    }
+    $_[0];
 }
 
 1;
