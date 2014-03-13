@@ -2,7 +2,7 @@ package Ukigumo::Server;
 use strict;
 use warnings;
 use 5.010001;
-use version; our $VERSION = version->declare('v2.0.0');
+use version; our $VERSION = version->declare('v2.0.1');
 
 use parent qw(Amon2);
 use Carp;
@@ -101,7 +101,7 @@ Ukigumo::Server is testing report storage server. You can use this server for Co
 
 =begin html
 
-<img src="http://gyazo.64p.org/image/dbd98bc15032d97fab081a271541baa2.png" alt="Screen shot">
+<img src="https://dl.dropboxusercontent.com/u/14832699/Ukigumo-Server-Top.png" alt="Screen shot">
 
 =end html
 

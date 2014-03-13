@@ -35,7 +35,7 @@ no_index:
 provides:
   Ukigumo::Server:
     file: lib/Ukigumo/Server.pm
-    version: v2.0.0
+    version: v2.0.1
   Ukigumo::Server::API:
     file: lib/Ukigumo/Server/API.pm
   Ukigumo::Server::API::Dispatcher:
@@ -112,7 +112,7 @@ resources:
   bugtracker: https://github.com/ukigumo/ukigumo-server/issues
   homepage: https://github.com/ukigumo/ukigumo-server
   repository: git://github.com/ukigumo/ukigumo-server.git
-version: v2.0.0
+version: v2.0.1
 x_contributors:
   - 'xaicron <xaicron@gmail.com>'
   - 'Kan Fushihara <kan@fout.jp>'
