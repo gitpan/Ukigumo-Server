@@ -16,7 +16,7 @@ configure_requires:
   CPAN::Meta::Prereqs: '0'
   Module::Build: '0.38'
 dynamic_config: 0
-generated_by: 'Minilla/v0.11.0, CPAN::Meta::Converter version 2.133380'
+generated_by: 'Minilla/v0.12.0, CPAN::Meta::Converter version 2.133380'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -35,7 +35,7 @@ no_index:
 provides:
   Ukigumo::Server:
     file: lib/Ukigumo/Server.pm
-    version: v2.0.2
+    version: v2.0.3
   Ukigumo::Server::API:
     file: lib/Ukigumo/Server/API.pm
   Ukigumo::Server::API::Dispatcher:
@@ -76,11 +76,12 @@ requires:
   DBI: '0'
   Data::Page::NoTotalEntries: '0.02'
   Data::Validator: '0.08'
+  Encode: '2.57'
   File::Find::Rule: '0'
   File::ShareDir: '0'
   FindBin::libs: '0'
   Getopt::Long: '0'
-  HTML::FromANSI::Tiny: '0'
+  HTML::FromANSI::Tiny: '0.103'
   JSON: '2'
   LWP::UserAgent: '0'
   Locale::Maketext::Extract: '0'
@@ -109,10 +110,10 @@ requires:
   parent: '0'
   perl: '5.010001'
 resources:
-  bugtracker: https://github.com/ukigumo/ukigumo-server/issues
-  homepage: https://github.com/ukigumo/ukigumo-server
-  repository: git://github.com/ukigumo/ukigumo-server.git
-version: v2.0.2
+  bugtracker: https://github.com/ukigumo/Ukigumo-Server/issues
+  homepage: https://github.com/ukigumo/Ukigumo-Server
+  repository: git://github.com/ukigumo/Ukigumo-Server.git
+version: v2.0.3
 x_contributors:
   - 'xaicron <xaicron@gmail.com>'
   - 'Kan Fushihara <kan@fout.jp>'

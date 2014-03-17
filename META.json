@@ -4,7 +4,7 @@
       "tokuhirom <tokuhirom@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.11.0",
+   "generated_by" : "Minilla/v0.12.0",
    "license" : [
       "perl_5"
    ],
@@ -58,11 +58,12 @@
             "DBI" : "0",
             "Data::Page::NoTotalEntries" : "0.02",
             "Data::Validator" : "0.08",
+            "Encode" : "2.57",
             "File::Find::Rule" : "0",
             "File::ShareDir" : "0",
             "FindBin::libs" : "0",
             "Getopt::Long" : "0",
-            "HTML::FromANSI::Tiny" : "0",
+            "HTML::FromANSI::Tiny" : "0.103",
             "JSON" : "2",
             "LWP::UserAgent" : "0",
             "Locale::Maketext::Extract" : "0",
@@ -111,7 +112,7 @@
    "provides" : {
       "Ukigumo::Server" : {
          "file" : "lib/Ukigumo/Server.pm",
-         "version" : "v2.0.2"
+         "version" : "v2.0.3"
       },
       "Ukigumo::Server::API" : {
          "file" : "lib/Ukigumo/Server/API.pm"
@@ -159,15 +160,15 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/ukigumo/ukigumo-server/issues"
+         "web" : "https://github.com/ukigumo/Ukigumo-Server/issues"
       },
-      "homepage" : "https://github.com/ukigumo/ukigumo-server",
+      "homepage" : "https://github.com/ukigumo/Ukigumo-Server",
       "repository" : {
-         "url" : "git://github.com/ukigumo/ukigumo-server.git",
-         "web" : "https://github.com/ukigumo/ukigumo-server"
+         "url" : "git://github.com/ukigumo/Ukigumo-Server.git",
+         "web" : "https://github.com/ukigumo/Ukigumo-Server"
       }
    },
-   "version" : "v2.0.2",
+   "version" : "v2.0.3",
    "x_contributors" : [
       "xaicron <xaicron@gmail.com>",
       "Kan Fushihara <kan@fout.jp>",

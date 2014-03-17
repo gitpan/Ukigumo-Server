@@ -250,19 +250,30 @@ sub find {
 sub _compress_text_data {
     my ($self, $row) = @_;
     c->config->{enable_compression} or return $row;
-    $row->{$_} = __compress(encode_utf8($row->{$_})) for qw(vc_log body);
+
+    for my $type (qw/vc_log body/) {
+        if (defined(my $content_text = $row->{$type})) {
+            $row->{$type} = __compress($content_text);
+        }
+    }
+
     $row;
 }
 
 sub _uncompress_text_data {
     my ($self, $row) = @_;
     c->config->{enable_compression} or return $row;
-    $row->{$_} = decode_utf8(__uncompress($row->{$_})) for qw(vc_log body);
+
+    for my $type (qw/vc_log body/) {
+        # For new Encode.pm
+        eval { $row->{$type} = decode_utf8(__uncompress($row->{$type})) };
+    }
+
     $row;
 }
 
 sub __compress {
-    my $bytes = Compress::Zlib::memGzip(\ $_[0]) ;
+    my $bytes = Compress::Zlib::memGzip(\ encode_utf8($_[0])) ;
     if (length($bytes) < length($_[0])) {
         return $bytes;
     }

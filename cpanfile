@@ -38,9 +38,10 @@ requires 'Getopt::Long';
 requires 'Plack::Loader';
 requires 'Pod::Usage';
 requires 'Starlet';
-requires 'HTML::FromANSI::Tiny';
+requires 'HTML::FromANSI::Tiny', '0.103';
 requires 'FindBin::libs';
 requires 'Compress::Zlib';
+requires 'Encode', '2.57';
 
 on 'develop' => sub {
     requires 'Locale::Maketext::Extract::Plugin::Xslate', 'v0.0.2';
