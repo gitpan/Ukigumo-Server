@@ -3,7 +3,7 @@ requires 'Amon2'                           => '2.50';
 requires 'Amon2::Plugin::ShareDir';
 requires 'Text::Xslate'                    => '1.1005';
 requires 'Plack::Middleware::ReverseProxy' => '0.09';
-requires 'Time::Piece'                     => '1.20';
+requires 'POSIX::strftime::Compiler'       => '0.31';
 requires 'DBI' => 0;
 requires 'DBD::SQLite' => 1.33;
 requires 'Data::Validator' => 0.08;
@@ -39,7 +39,6 @@ requires 'Plack::Loader';
 requires 'Pod::Usage';
 requires 'Starlet';
 requires 'HTML::FromANSI::Tiny', '0.103';
-requires 'FindBin::libs';
 requires 'Compress::Zlib';
 requires 'Encode', '2.57';
 
@@ -48,6 +47,8 @@ on 'develop' => sub {
     requires 'DBIx::Schema::DSL';
     requires 'SQL::Translator::Producer::Teng';
     requires 'Path::Tiny';
+    requires 'Perl::Critic';
+    requires 'Test::Perl::Critic';
 };
 
 on 'test' => sub {

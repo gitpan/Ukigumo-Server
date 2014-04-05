@@ -10,9 +10,14 @@
         <span style="font-weight:bold; font-size: 130%; color: <: $report.status | status_color :>"><: $report.status | status_str | l :></span>
         </h1>
         : if $report.compare_url {
-            <p>
-                Compare: <a href="<: $report.compare_url :>" target="_blank"><: $report.compare_url :></a>
-            </p>
+        <p>
+            Compare: <a href="<: $report.compare_url :>" target="_blank"><: $report.compare_url :></a>
+        </p>
+        : }
+        : if $report.elapsed_time_sec {
+        <p>
+            <: l('Elapsed Time') :>: <: duration($report.elapsed_time_sec) :>
+        </p>
         : }
         : if $report.vc_log {
             <ul>

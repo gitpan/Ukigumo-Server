@@ -6,6 +6,8 @@ README.md
 author/create_ddl.pl
 author/xgettext.pl
 cpanfile
+eg/app.psgi
+eg/dotcloud.yml
 lib/Ukigumo/Server.pm
 lib/Ukigumo/Server/API.pm
 lib/Ukigumo/Server/API/Dispatcher.pm
@@ -43,6 +45,7 @@ share/static/503.html
 share/static/504.html
 share/static/css/bootstrap.min.css
 share/static/css/main.less
+share/static/css/rss.css
 share/static/google-code-prettify/lang-apollo.js
 share/static/google-code-prettify/lang-clj.js
 share/static/google-code-prettify/lang-css.js
@@ -64,6 +67,7 @@ share/static/google-code-prettify/lang-yaml.js
 share/static/google-code-prettify/prettify.css
 share/static/google-code-prettify/prettify.js
 share/static/img/favicon.ico
+share/static/img/rss-icon.png
 share/static/img/ukigumo-chan-angry.png
 share/static/img/ukigumo-chan.png
 share/static/js/jquery-1.6.3.min.js
@@ -87,6 +91,7 @@ share/tmpl/index.tx
 share/tmpl/project/index.tx
 share/tmpl/recent.tx
 share/tmpl/report_list.tx
+share/tmpl/rss.xml.tx
 share/tmpl/show_report.tx
 t/00_compile.t
 t/01_root.t
@@ -101,6 +106,7 @@ t/Util.pm
 t/Util.t
 t/api-post.t
 t/docs.t
+t/rss.t
 t/sqlite.t
 xt/02_perlcritic.t
 xt/04-xgettext.t

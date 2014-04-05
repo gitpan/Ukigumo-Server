@@ -116,7 +116,7 @@ sub list {
         limit    => $args->{limit} + 1,
         offset   => $args->{limit}*($args->{page}-1),
         order_by => 'report_id DESC',
-        columns  => [qw/report_id revision status ctime/],
+        columns  => [qw/report_id revision status ctime elapsed_time_sec/],
     });
     $itr->suppress_object_creation(1);
 
@@ -129,6 +129,7 @@ sub list {
             0;
         }
     };
+
     my $pager = Data::Page::NoTotalEntries->new(
         has_next             => $has_next,
         entries_per_page     => $args->{limit},
@@ -172,6 +173,7 @@ sub insert {
         body     => { isa => 'Str', optional => 1 },
         vc_log   => { isa => 'Str', optional => 1 },
         compare_url => { isa => 'Str', optional => 1 },
+        elapsed_time_sec => { isa => 'Int', optional => 1 },
     );
     my $args = $rule->validate(@_);
 
@@ -241,10 +243,12 @@ sub find {
     my $args = $rule->validate(@_);
 
     local c->db->{suppress_row_objects} = 1;
-    return $class->_uncompress_text_data(c->db->single_by_sql(
+    my $report = $class->_uncompress_text_data(c->db->single_by_sql(
         q{SELECT branch.project, branch.branch, report.* FROM report INNER JOIN branch ON (report.branch_id=branch.branch_id) WHERE report_id=?},
         [$args->{report_id}]
     ));
+
+    return $report;
 }
 
 sub _compress_text_data {
@@ -293,3 +297,4 @@ sub __uncompress {
 }
 
 1;
+

@@ -3,11 +3,12 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title><: if $subtitle { :><: $subtitle :> - <: } :><: $title || l('Ukigumo') :></title>
-    <meta http-equiv="Content-Style-Type" content="text/css" />  
-    <meta http-equiv="Content-Script-Type" content="text/javascript" />  
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"]]>
     <meta name="robots" content="noindex,nofollow,noarchive" />
     <meta name="format-detection" content="telephone=no" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="<: uri_for('/rss.xml') :>" />
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<: uri_for('/static/img/favicon.ico') :>" />
     <link href="<: uri_for('/static/less/bootstrap/bootstrap.less') :>" rel="stylesheet/less" media="screen" />
     <script src="<: uri_for('/static/js/jquery-1.6.3.min.js') :>"></script>

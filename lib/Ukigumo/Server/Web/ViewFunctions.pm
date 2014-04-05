@@ -6,7 +6,7 @@ use parent qw(Exporter);
 use URI::WithBase;
 use Text::Xslate qw/mark_raw html_escape/;
 use Module::Functions;
-use Time::Piece;
+use POSIX::strftime::Compiler qw/strftime/;
 use Ukigumo::Constants;
 
 our @EXPORT = get_public_functions();
@@ -28,6 +28,25 @@ sub ago {
     Amon2->context->duration->can('ago')->(@_)
 }
 
+sub duration {
+    my $sec = shift;
+
+    return '-' unless defined $sec;
+
+    my $hour = int($sec / 3600);
+    $sec -= $hour * 3600;
+    my $min = int($sec / 60);
+    $sec -= $min * 60;
+
+    my $formatted_time = '';
+    if ($hour) {
+        $formatted_time = "$hour hour ";
+    }
+    $formatted_time .= "$min min $sec sec";
+
+    return $formatted_time;
+}
+
 sub l {
     my $base = shift;
     my @args = map { html_escape $_ } @_;    # escape arguments
@@ -36,7 +55,7 @@ sub l {
 
 sub ctime_cc_str {
     my $epoch = shift;
-    Time::Piece->new($epoch)->strftime('%Y-%m-%dT%H:%M:%S.000%z');
+    strftime('%Y-%m-%dT%H:%M:%S.000%z', localtime $epoch);
 }
 
 sub status_cc_str {
