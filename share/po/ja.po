@@ -27,15 +27,15 @@ msgstr "浮雲 API ドキュメント"
 msgid "Add new report"
 msgstr "レポートを追加する"
 
-#: share/tmpl/include/table/project.tx:4 share/tmpl/recent.tx:14
+#: share/tmpl/include/table/project.tx:5 share/tmpl/recent.tx:15
 msgid "Branch"
 msgstr "ブランチ"
 
-#: share/tmpl/include/table/project.tx:7 share/tmpl/recent.tx:17 share/tmpl/report_list.tx:15
+#: share/tmpl/include/table/project.tx:8 share/tmpl/recent.tx:18 share/tmpl/report_list.tx:16
 msgid "Date"
 msgstr "日付"
 
-#: share/tmpl/branch_delete.tx:9 share/tmpl/report_list.tx:42
+#: share/tmpl/branch_delete.tx:9 share/tmpl/report_list.tx:44
 msgid "Delete test data for this branch"
 msgstr "このブランチのテストデータを削除する"
 
@@ -55,7 +55,7 @@ msgstr "浮雲サーバーを Heroku に配置する方法(英語)"
 msgid "Documentation"
 msgstr "ドキュメント"
 
-#: share/tmpl/report_list.tx:16 share/tmpl/show_report.tx:19
+#: share/tmpl/include/table/project.tx:9 share/tmpl/recent.tx:19 share/tmpl/report_list.tx:17 share/tmpl/show_report.tx:19
 msgid "Elapsed Time"
 msgstr "処理時間"
 
@@ -79,7 +79,7 @@ msgstr "不明。。"
 msgid "Output"
 msgstr "出力"
 
-#: share/tmpl/recent.tx:13
+#: share/tmpl/recent.tx:14
 msgid "Project"
 msgstr "プロジェクト"
 
@@ -96,7 +96,7 @@ msgstr "最近のレポート"
 msgid "Reports for"
 msgstr "レポート: "
 
-#: share/tmpl/include/table/project.tx:5 share/tmpl/recent.tx:15 share/tmpl/report_list.tx:13
+#: share/tmpl/include/table/project.tx:6 share/tmpl/recent.tx:16 share/tmpl/report_list.tx:14
 msgid "Revision"
 msgstr "リビジョン"
 
@@ -108,7 +108,7 @@ msgstr "成功"
 msgid "Search Report"
 msgstr "レポートを検索する"
 
-#: share/tmpl/include/table/project.tx:6 share/tmpl/recent.tx:16 share/tmpl/report_list.tx:14
+#: share/tmpl/include/table/project.tx:7 share/tmpl/recent.tx:17 share/tmpl/report_list.tx:15
 msgid "Status"
 msgstr "状態"
 
