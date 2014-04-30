@@ -8,6 +8,7 @@ author/xgettext.pl
 cpanfile
 eg/app.psgi
 eg/dotcloud.yml
+eg/ukigumo.yml
 lib/Ukigumo/Server.pm
 lib/Ukigumo/Server/API.pm
 lib/Ukigumo/Server/API/Dispatcher.pm
@@ -44,6 +45,7 @@ share/static/502.html
 share/static/503.html
 share/static/504.html
 share/static/css/bootstrap.min.css
+share/static/css/jquery.powertip-light.min.css
 share/static/css/main.less
 share/static/css/rss.css
 share/static/google-code-prettify/lang-apollo.js
@@ -70,7 +72,10 @@ share/static/img/favicon.ico
 share/static/img/rss-icon.png
 share/static/img/ukigumo-chan-angry.png
 share/static/img/ukigumo-chan.png
-share/static/js/jquery-1.6.3.min.js
+share/static/js/Chart.min.js
+share/static/js/elapsed-time-chart.js
+share/static/js/jquery-1.11.0.min.js
+share/static/js/jquery.powertip.min.js
 share/static/js/less-1.1.3.min.js
 share/static/less/bootstrap/bootstrap.less
 share/static/less/bootstrap/forms.less
@@ -98,6 +103,7 @@ t/01_root.t
 t/02_mech.t
 t/03-branch.t
 t/03-compression.t
+t/04-report.t
 t/05-api-post.t
 t/06-api-search.t
 t/07-mysqld.t
@@ -106,6 +112,8 @@ t/Util.pm
 t/Util.t
 t/api-post.t
 t/docs.t
+t/jshint.t
+t/resources/report.log
 t/rss.t
 t/sqlite.t
 xt/02_perlcritic.t

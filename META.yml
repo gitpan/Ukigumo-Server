@@ -35,7 +35,7 @@ no_index:
 provides:
   Ukigumo::Server:
     file: lib/Ukigumo/Server.pm
-    version: v2.1.2
+    version: v2.1.3
   Ukigumo::Server::API:
     file: lib/Ukigumo/Server/API.pm
   Ukigumo::Server::API::Dispatcher:
@@ -101,6 +101,7 @@ requires:
   Text::Xslate: '1.1005'
   Text::Xslate::Util: '0'
   Time::Duration: '0'
+  Time::Duration::Abbreviated: '0'
   Time::Duration::ja: '0.03'
   URI::Escape: '0'
   URI::WithBase: '0'
@@ -111,7 +112,7 @@ resources:
   bugtracker: https://github.com/ukigumo/Ukigumo-Server/issues
   homepage: https://github.com/ukigumo/Ukigumo-Server
   repository: git://github.com/ukigumo/Ukigumo-Server.git
-version: v2.1.2
+version: v2.1.3
 x_contributors:
   - 'xaicron <xaicron@gmail.com>'
   - 'Kan Fushihara <kan@fout.jp>'
